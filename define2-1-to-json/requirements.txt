@@ -1,0 +1,2 @@
+odmlib>=0.1.4
+xmlschema>=1.10.0
