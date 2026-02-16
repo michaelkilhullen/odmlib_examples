@@ -152,6 +152,7 @@
                 <Question>
                     <TranslatedText xml:lang="en">Visit Date</TranslatedText>
                 </Question>
+                <Alias Context="RAW" Name="IT.IE.VISITDAT"/>
                 <Alias Context="CDASH" Name="VISITDAT"/>
                 <Alias Context="SDTM" Name="RFSTDTC"/>
             </ItemDef>
