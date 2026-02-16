@@ -101,13 +101,14 @@ class Xls2Define:
         odm.Study.MetaDataVersion.Standards = self.define_objects["Standards"]
         supp_docs = SD.SupportingDocuments()
         odm.Study.MetaDataVersion.AnnotatedCRF = supp_docs.create_annotatedcrf(self.acrf)
-        odm.Study.MetaDataVersion.SupplementalDoc = supp_docs.create_supplementaldoc(self.acrf, self.define_objects["leaf"])
+        if "leaf" in self.define_objects and len(self.define_objects["leaf"]) > 0:
+            odm.Study.MetaDataVersion.SupplementalDoc = supp_docs.create_supplementaldoc(self.acrf, self.define_objects["leaf"])
         for elem in ELEMENTS:
             self._load_elements(odm, elem)
         return odm
 
     def _load_elements(self, odm, elem_name):
-        """
+        """https://github.com/cdisc-org/DataExchange-DDS
         when building the doc, add the instantiated objects to the odmlib MetaDataVersion
         :param odm: odmlib Define-XML objects created to represent Define-XML v2.0
         :param elem_name: name of the element objects to add to MetaDataVersion
