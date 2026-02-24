@@ -14,5 +14,9 @@ class ProgrammingCode:
         with open(self.file_name, 'w', newline='') as f:
             writer = csv.writer(f, dialect="excel")
             writer.writerow(self.HEADERS)
-            #for ig in self.mdv.AnalysisResultDisplays:
-            #   writer.writerow([ig.OID, ig.Name, ig.Description.TranslatedText[0]._content, ig.DocumentRef])
+            for display in self.mdv.ResultDisplay:
+                for result in display.AnalysisResult:
+                    leaf_id = ""
+                    if result.ProgrammingCode.DocumentRef:
+                        leaf_id = result.ProgrammingCode.DocumentRef[0].leafID
+                    writer.writerow([result.OID, result.ProgrammingCode.Context, leaf_id, result.ProgrammingCode.Code._content])

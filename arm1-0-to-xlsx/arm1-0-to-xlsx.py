@@ -10,7 +10,7 @@ import dictionaries, methods, comments, documents, resultdisplays, analysisresul
 
 WORKSHEETS = ["Study", "Standards", "ResultDisplays", "AnalysisResults", "AnalysisDatasets", "ProgrammingCode", "Datasets", "Variables", "ValueLevel", "WhereClauses", "CodeLists", "Dictionaries",
               "Methods", "Comments", "Documents"]
-EXCEL_NAME = "odmlib-define-metadata.xlsx"
+EXCEL_NAME = "odmlib-arm-metadata.xlsx"
 
 """
 define2-1-to-xlsx.py - an example program using odmlib to convert a Define-XML file into a metadata spreadsheet
@@ -38,7 +38,7 @@ class Define2Xls:
         for worksheet in WORKSHEETS:
             if worksheet == "Study":
                 ws = eval(worksheet.lower() + "." + worksheet + "(study_odmlib, mdv_odmlib, self.data_path, self.lang, self.acrf)")
-            elif worksheet == "AnalysisResults":
+            elif worksheet in ("AnalysisResults","AnalysisDatasets","ProgrammingCode"):
                 ws = eval(worksheet.lower() + "." + worksheet + "(mdv_odmlib.AnalysisResultDisplays, self.data_path)")
             else:
                 ws = eval(worksheet.lower() + "." + worksheet + "(mdv_odmlib, self.data_path)")

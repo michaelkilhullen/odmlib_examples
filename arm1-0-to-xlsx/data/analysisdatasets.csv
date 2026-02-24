@@ -1,1 +1,5 @@
-Result,Order,Dataset,Variables,Where Clause
+Result,Dataset,Variables,Where Clause
+AR.Table_14-3.01.R.1,IG.ADQSADAS,IT.ADQSADAS.CHG,WC.Table_14-3.01.R.1.ADQSADAS
+AR.Table_14-3.01.R.2,IG.ADQSADAS,IT.ADQSADAS.CHG,WC.Table_14-3.01.R.2.ADQSADAS
+AR.Table_14-5.02.R.1,IG.ADAE,"IT.ADAE.AEBODSYS,IT.ADAE.AEDECOD",WC.Table_14-5.02.R.1.ADAE
+AR.Table_14-5.02.R.1,IG.ADSL,,WC.Table_14-5.02.R.1.ADSL

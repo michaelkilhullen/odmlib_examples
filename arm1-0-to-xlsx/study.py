@@ -14,7 +14,7 @@ class Study:
         self.file_name = os.path.join(self.path, "study.csv")
 
     def extract(self):
-        print(f"Study OID: {self.study.GlobalVariables.StudyName}")
+        print(f"Study OID: {self.study.OID}")
         with open(self.file_name, 'w', newline='') as f:
             writer = csv.writer(f, dialect="excel")
             writer.writerow(self.HEADERS)
@@ -25,4 +25,6 @@ class Study:
             writer.writerow(["Annotated CRF", self.acrf])
             # for multiple Suppdocs, just repeat the row
             for sd in self.mdv.SupplementalDoc.DocumentRef:
-                writer.writerow(["SupplementalDocument", sd.leafID])
+                # annotated CRF is a specialized attribute so only add additional suppdocs
+                if sd.leafID != self.acrf:
+                    writer.writerow(["SupplementalDocument", sd.leafID])

@@ -3,7 +3,7 @@ import os
 
 
 class AnalysisDatasets:
-    HEADERS = ["Result", "Order", "Dataset", "Variables", "Where Clause"]
+    HEADERS = ["Result", "Dataset", "Variables", "Where Clause"]
 
     def __init__(self, odmlib_mdv, data_path):
         self.mdv = odmlib_mdv
@@ -14,5 +14,10 @@ class AnalysisDatasets:
         with open(self.file_name, 'w', newline='') as f:
             writer = csv.writer(f, dialect="excel")
             writer.writerow(self.HEADERS)
-            #for ig in self.mdv.AnalysisResultDisplays:
-            #   writer.writerow([ig.OID, ig.Name, ig.Description.TranslatedText[0]._content, ig.DocumentRef])
+            for display in self.mdv.ResultDisplay:
+                for result in display.AnalysisResult:
+                    for dataset in result.AnalysisDatasets:
+                        avars = []
+                        for avar in dataset.AnalysisVariable:
+                            avars.append(avar.ItemOID)
+                        writer.writerow([result.OID, dataset.ItemGroupOID, ",".join(avars), dataset.WhereClauseRef.WhereClauseOID])
