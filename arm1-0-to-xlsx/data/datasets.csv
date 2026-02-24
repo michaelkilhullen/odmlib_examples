@@ -1,0 +1,4 @@
+OID,Dataset,Description,Class,Structure,Purpose,Repeating,Reference Data,Comment,IsNonStandard,StandardOID,HasNoData,Document
+IG.ADSL,ADSL,Subject-Level Analysis,SUBJECT LEVEL ANALYSIS DATASET,one record per subject,Analysis,No,No,COM.ADSL,,STD.01,,LF.ADSL
+IG.ADQSADAS,ADQSADAS,ADAS-Cog Analysis,BASIC DATA STRUCTURE,One record per subject per parameter per analysis visit per analysis date,Analysis,Yes,No,COM.ADQSADAS,,STD.01,,LF.ADQSADAS
+IG.ADAE,ADAE,Adverse Events Analysis Dataset,OCCURRENCE DATA STRUCTURE,one record per subject per adverse event,Analysis,Yes,No,COM.ADAE,,STD.01,,LF.ADAE

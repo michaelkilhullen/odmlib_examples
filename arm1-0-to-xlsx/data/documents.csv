@@ -1,0 +1,8 @@
+ID,Title,Href
+LF.ADRG,Analysis Data Reviewer's Guide,adrg.pdf
+LF.ADQSADAS.PGM,adqsadas.sas,../programs/adqsadas-sas.txt
+LF.CODE.001,adae.sas,../programs/adae-sas.txt
+LF.ADSL.PGM,adsl.sas,../programs/adsl-sas.txt
+LF.CSR,Clinical Study Report,../dummy-csr/dummy-csr.pdf
+LF.at14-5-02.sas,at14-5-02.sas,../programs/at14-5-02-sas.txt
+LF.acrf,Annotated CRF,blankcrf.pdf

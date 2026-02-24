@@ -1,0 +1,3 @@
+OID,Name,Data Type,Dictionary,Version
+CL.AEDICT,Adverse Event Dictionary,text,MedDRA,8.0
+CL.AEDICTN,Adverse Event Dictionary (N),integer,MedDRA,8.0

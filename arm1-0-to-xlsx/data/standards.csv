@@ -1,0 +1,4 @@
+OID,Name,Type,Publishing Set,Version,Status,Comment
+STD.01,ADaMIG,IG,,1.1,Final,
+STD.CT.01,CDISC/NCI,CT,ADaM,2017-09-29,Final,COM.STDCT.01
+STD.CT.02,CDISC/NCI,CT,SDTM,2018-06-29,Final,COM.STDCT.02

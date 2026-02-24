@@ -1,0 +1,8 @@
+Attribute,Value
+StudyName,<class 'odmlib.define_2_1.model.StudyName'>
+StudyDescription,CDISC-Sample Data Definition
+ProtocolName,CDISC-Sample
+Language,en
+Annotated CRF,LF.acrf
+SupplementalDocument,LF.ADRG
+SupplementalDocument,LF.acrf
