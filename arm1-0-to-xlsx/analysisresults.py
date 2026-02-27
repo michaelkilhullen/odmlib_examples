@@ -17,8 +17,18 @@ class AnalysisResults:
             writer.writerow(self.HEADERS)
             for display in self.mdv.ResultDisplay:
                 for ig in display.AnalysisResult:
-                    writer.writerow([ig.OID, ig.ParameterOID, ig.Description.TranslatedText[0]._content,
+                    poid=""
+                    leafId = ""
+                    pages = ""
+                    title = ""
+                    if ig.ParameterOID:
+                        poid=ig.ParameterOID
+                    if len(ig.Documentation.DocumentRef) > 0:
+                        leafId = ig.Documentation.DocumentRef[0].leafID
+                        pages = ig.Documentation.DocumentRef[0].PDFPageRef[0].PageRefs
+                        title = ig.Documentation.DocumentRef[0].PDFPageRef[0].Title
+                    writer.writerow([ig.OID, poid, ig.Description.TranslatedText[0]._content,
                         ig.AnalysisReason, ig.AnalysisPurpose, display.OID,
-                        ig.Documentation.Description.TranslatedText[0]._content, ig.Documentation.DocumentRef[0].leafID,
-                        ig.Documentation.DocumentRef[0].PDFPageRef[0].PageRefs,
-                        ig.Documentation.DocumentRef[0].PDFPageRef[0].Title, ig.AnalysisDatasets.CommentOID])
+                        ig.Documentation.Description.TranslatedText[0]._content, leafId,
+                        pages,
+                        title, ig.AnalysisDatasets.CommentOID])

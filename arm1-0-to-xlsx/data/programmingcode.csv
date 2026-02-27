@@ -1,18 +1,18 @@
 Result,Context,Document,Code
 AR.Table_14-3.01.R.1,SAS version 9.2,,"
-proc glm data = ADQSADAS;
-  where EFFFL='Y' and ANL01FL='Y' and AVISIT='Week 24' and PARAMCD=""ACTOT"";
-  class SITEGR1;
-  model CHG = TRTPN SITEGR1;
-run;
-            "
+                                proc glm data = ADQSADAS;
+                                where EFFFL='Y' and ANL01FL='Y' and AVISIT='Week 24' and PARAMCD=""ACTOT"";
+                                class SITEGR1;
+                                model CHG = TRTPN SITEGR1;
+                                run;
+                            "
 AR.Table_14-3.01.R.2,SAS version 9.2,,"
-proc glm data = ADQSADAS;
-  where EFFFL='Y' and ANL01FL='Y' and AVISIT='Week 24' and PARAMCD=""ACTOT"";
-  class TRTPN SITEGR1;
-  model CHG = TRTPN SITEGR1 BASE;
-  means TRTPN;
-  lsmeans TRTPN / OM STDERR PDIFF CL;
-run;
-            "
+                                proc glm data = ADQSADAS;
+                                where EFFFL='Y' and ANL01FL='Y' and AVISIT='Week 24' and PARAMCD=""ACTOT"";
+                                class TRTPN SITEGR1;
+                                model CHG = TRTPN SITEGR1 BASE;
+                                means TRTPN;
+                                lsmeans TRTPN / OM STDERR PDIFF CL;
+                                run;
+                            "
 AR.Table_14-5.02.R.1,SAS version 9.2,LF.at14-5-02.sas,

@@ -3,7 +3,7 @@ import os
 
 
 class CodeLists:
-    HEADERS = ["OID", "Name", "NCI Codelist Code", "Data Type", "Order", "Term", "NCI Term Code", "Decoded Value",
+    HEADERS = ["OID", "Name", "NCI Codelist Code", "Data Type", "Rank", "Order", "Term", "NCI Term Code", "Decoded Value",
                "Comment", "IsNonStandard", "StandardOID"]
 
     def __init__(self, odmlib_mdv, data_path):
@@ -27,10 +27,13 @@ class CodeLists:
             order_number = ""
             if ei.OrderNumber:
                 order_number = ei.OrderNumber
+            rank_number = ""
+            if ei.Rank:
+                rank_number = ei.Rank
             ei_c_code = ""
             if ei.Alias:
                 ei_c_code = ei.Alias[0].Name
-            writer.writerow([cl.OID, cl.Name, attr["cl_c_code"], cl.DataType, order_number, ei.CodedValue, ei_c_code, "",
+            writer.writerow([cl.OID, cl.Name, attr["cl_c_code"], cl.DataType, rank_number, order_number, ei.CodedValue, ei_c_code, "",
                              attr["comment_oid"], attr["is_non_std"], attr["standard_oid"]])
 
     def _write_code_list_item_row(self, cl, writer):
@@ -39,11 +42,14 @@ class CodeLists:
             order_number = ""
             if cli.OrderNumber:
                 order_number = cli.OrderNumber
+            rank_number = ""
+            if cli.Rank:
+                rank_number = cli.Rank
             cli_c_code = ""
             if cli.Alias:
                 cli_c_code = cli.Alias[0].Name
             decode = cli.Decode.TranslatedText[0]._content
-            writer.writerow([cl.OID, cl.Name, attr["cl_c_code"], cl.DataType, order_number, cli.CodedValue, cli_c_code,
+            writer.writerow([cl.OID, cl.Name, attr["cl_c_code"], cl.DataType, rank_number, order_number, cli.CodedValue, cli_c_code,
                              decode, attr["comment_oid"], attr["is_non_std"], attr["standard_oid"]])
 
     def _conditional_codelist_content(self ,cl):

@@ -1,7 +1,9 @@
 OID,Description,Document,Pages
 COM.ADSL,Screen Failures are excluded since they are not needed for this study analysis. See referenced dataset creation program and ADRG,LF.ADSL.PGM,
+COM.ADSL,Screen Failures are excluded since they are not needed for this study analysis. See referenced dataset creation program and ADRG,LF.ADRG,6
 COM.ADAE,See SAS program,LF.CODE.001,
 COM.ADQSADAS,See referenced dataset creation program and ADRG,LF.ADQSADAS.PGM,
+COM.ADQSADAS,See referenced dataset creation program and ADRG,LF.ADRG,Section2.1
 COM.JOIN-ADSL-ADAE,Get denominators for percentages from ADSL and counts and numerators from ADAE. Join ADAE with ADSL based on the unique subject identifier (USUBJID) keeping only records in ADAE for the numerator.,,
 COM.ADQSADAS.AVISITN,Numeric code for AVISIT,,
 COM.ADQSADAS.PARAMN,Numeric code for PARAM,,

@@ -17,9 +17,12 @@ class Comments:
             for com in self.mdv.CommentDef:
                 leaf_id = ""
                 page_refs = ""
-                if com.DocumentRef:
-                    leaf_id = com.DocumentRef[0].leafID
-                    if com.DocumentRef[0].PDFPageRef:
-                        page_refs = com.DocumentRef[0].PDFPageRef[0].PageRefs
                 comment = " ".join(com.Description.TranslatedText[0]._content.split())
-                writer.writerow([com.OID, comment, leaf_id, page_refs])
+                if com.DocumentRef:
+                    for dr in com.DocumentRef:
+                        leaf_id = dr.leafID
+                        if dr.PDFPageRef:
+                            page_refs = dr.PDFPageRef[0].PageRefs
+                        writer.writerow([com.OID, comment, leaf_id, page_refs])
+                else:
+                    writer.writerow([com.OID, comment, leaf_id, page_refs])

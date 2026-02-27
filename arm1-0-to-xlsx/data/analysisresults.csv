@@ -1,7 +1,23 @@
 OID,ParameterOID,Description,Reason,Purpose,DisplayOID,Documentation,Document,Pages,Title,DatasetComment
-AR.Table_14-3.01.R.1,IT.ADQSADAS.PARAMCD,Dose response analysis for ADAS-Cog changes from baseline,SPECIFIED IN SAP,PRIMARY OUTCOME MEASURE,RD.Table_14-3.01,"Linear model analysis of CHG for dose response; using randomized dose (0 for placebo; 54 for low dose; 81 for high dose) and site group in model. Used PROC GLM in SAS to produce p-value (from Type III SS for treatment dose).
-              ",LF.CSR,4,SAP Section 10.1.1,
-AR.Table_14-3.01.R.2,IT.ADQSADAS.PARAMCD,Pairwise comparisons to placebo for ADAS-Cog changes from baseline,SPECIFIED IN SAP,PRIMARY OUTCOME MEASURE,RD.Table_14-3.01,"ANCOVA analysis of CHG performed to provide pairwise comparisons among treatment groups and adjusted means; using randomized treatment as class variable and site group as class variable in model and the baseline value as a covariate.
-              ",LF.CSR,4,SAP Section 10.1.1,
-AR.Table_14-5.02.R.1,<class 'odmlib.typed.OID'>,Incidence of Treatment Emergent Serious Adverse Events by Treatment Group,SPECIFIED IN SAP,PRIMARY OUTCOME MEASURE,RD.Table_14-5.02,"Unique count of subjects that experienced an Adverse Event by Preferred Term, System Organ Class, and Treatment Group and percentages based on the number of subjects in the safety population within each treatment group. The total number of times an event occurred was recorded by Preferred Term, System Organ Class, and Treatment Group. Fisher's exact test was used for treatment comparison of event rates.
-                ",LF.CSR,5,SAP Section 11.2,COM.JOIN-ADSL-ADAE
+AR.Table_14-3.01.R.1,IT.ADQSADAS.PARAMCD,"Dose response analysis for ADAS-Cog changes from baseline
+                            ",SPECIFIED IN SAP,PRIMARY OUTCOME MEASURE,RD.Table_14-3.01,"Linear model analysis of CHG for dose response; using
+                                    randomized dose (0 for placebo; 54 for low dose; 81 for high dose) and site group in
+                                    model. Used PROC GLM in SAS to produce p-value (from Type III SS for treatment
+                                    dose).
+                                ",LF.CSR,4,SAP Section 10.1.1,
+AR.Table_14-3.01.R.2,IT.ADQSADAS.PARAMCD,"Pairwise comparisons to placebo for ADAS-Cog changes from
+                                baseline
+                            ",SPECIFIED IN SAP,PRIMARY OUTCOME MEASURE,RD.Table_14-3.01,"ANCOVA analysis of CHG performed to provide pairwise
+                                    comparisons among treatment groups and adjusted means; using randomized treatment as
+                                    class variable and site group as class variable in model and the baseline value as a
+                                    covariate.
+                                ",LF.CSR,4,SAP Section 10.1.1,
+AR.Table_14-5.02.R.1,,"Incidence of Treatment Emergent Serious Adverse Events by
+                                Treatment Group
+                            ",SPECIFIED IN SAP,PRIMARY OUTCOME MEASURE,RD.Table_14-5.02,"Unique count of subjects that experienced an Adverse Event
+                                    by Preferred Term, System Organ Class, and Treatment Group and percentages based on
+                                    the number of subjects in the safety population within each treatment group. The
+                                    total number of times an event occurred was recorded by Preferred Term, System Organ
+                                    Class, and Treatment Group. Fisher's exact test was used for treatment comparison of
+                                    event rates.
+                                ",LF.CSR,5,SAP Section 11.2,COM.JOIN-ADSL-ADAE

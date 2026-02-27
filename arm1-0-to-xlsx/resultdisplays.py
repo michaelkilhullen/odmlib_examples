@@ -15,5 +15,13 @@ class ResultDisplays:
             writer = csv.writer(f, dialect="excel")
             writer.writerow(self.HEADERS)
             for ig in self.mdv.AnalysisResultDisplays:
-                writer.writerow([ig.OID, ig.Name, ig.Description.TranslatedText[0]._content, ig.DocumentRef[0].leafID,
-                                 ig.DocumentRef[0].PDFPageRef[0].PageRefs, ig.DocumentRef[0].PDFPageRef[0].Title])
+                leafId = ""
+                pages = ""
+                title = ""
+                if len(ig.DocumentRef) > 0:
+                    leafId = ig.DocumentRef[0].leafID
+                    pages = ig.DocumentRef[0].PDFPageRef[0].PageRefs
+                    title = ig.DocumentRef[0].PDFPageRef[0].Title
+
+                writer.writerow([ig.OID, ig.Name, ig.Description.TranslatedText[0]._content, leafId,
+                                 pages, title])

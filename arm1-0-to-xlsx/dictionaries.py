@@ -3,7 +3,7 @@ import os
 
 
 class Dictionaries:
-    HEADERS = ["OID", "Name", "Data Type", "Dictionary", "Version"]
+    HEADERS = ["OID", "Name", "Data Type", "Dictionary", "Version", "Href"]
 
     def __init__(self, odmlib_mdv, data_path):
         self.mdv = odmlib_mdv
@@ -23,4 +23,7 @@ class Dictionaries:
         version = ""
         if ext_cl.Version:
             version = ext_cl.Version
-        writer.writerow([cl.OID, cl.Name, cl.DataType, ext_cl.Dictionary, version])
+        href = ""
+        if ext_cl.href:
+            href = ext_cl.href
+        writer.writerow([cl.OID, cl.Name, cl.DataType, ext_cl.Dictionary, version, href])
