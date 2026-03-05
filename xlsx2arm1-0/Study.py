@@ -10,6 +10,7 @@ class Study(define_object.DefineObject):
     def create_define_objects(self, sheet, objects, lang, acrf, suppdocs):
         """
         parse each row in the Excel sheet and create ODMLIB objects to return in the objects dictionary
+        :param suppdocs:
         :param sheet: xlrd Excel sheet object
         :param objects: dictionary of ODMLIB objects updated by this method
         :param lang: xml:lang setting for TranslatedText
@@ -24,7 +25,11 @@ class Study(define_object.DefineObject):
             rows.update(row_content)
         self.lang = rows["Language"]
         self.acrf = rows["Annotated CRF"]
-        self.suppdoc = rows["SupplementalDocument"]
+        sdocs = rows["SupplementalDocuments"]
+        if sdocs:
+            result = [item.strip() for item in sdocs.split(',')]
+            for var in result:
+                suppdocs.append(var)
         objects["Study"] = self._create_study_object(rows)
         objects["MetaDataVersion"] = self._create_metadataversion_object(rows)
 

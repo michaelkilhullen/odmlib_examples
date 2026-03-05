@@ -1,7 +1,7 @@
 Attribute,Value
-StudyName,CDISC-Sample
-StudyDescription,CDISC-Sample Data Definition
-ProtocolName,CDISC-Sample
+StudyName,TDF_ADaM
+StudyDescription,Test datasets created by updating existing CDISCPILOT ADaM datasets
+ProtocolName,TDF_Datasets
 Language,en
-Annotated CRF,LF.acrf
-SupplementalDocument,LF.ADRG
+Annotated CRF,
+SupplementalDocuments,"LF.Suppdoc,LF.Suppdoc2"

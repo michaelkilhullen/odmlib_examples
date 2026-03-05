@@ -23,8 +23,10 @@ class Study:
             writer.writerow(["ProtocolName", self.study.GlobalVariables.ProtocolName])
             writer.writerow(["Language", self.language])
             writer.writerow(["Annotated CRF", self.acrf])
-            # for multiple Suppdocs, just repeat the row
+            # for multiple Suppdocs, create a csl
+            avars = []
             for sd in self.mdv.SupplementalDoc.DocumentRef:
                 # annotated CRF is a specialized attribute so only add additional suppdocs
                 if sd.leafID != self.acrf:
-                    writer.writerow(["SupplementalDocument", sd.leafID])
+                    avars.append(sd.leafID)
+            writer.writerow(["SupplementalDocuments", ",".join(avars)])

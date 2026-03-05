@@ -35,7 +35,7 @@ class Xls2Define:
         self.workbook = load_workbook(filename=self.excel_file, read_only=True, data_only=True)
         self.lang = "en"
         self.acrf = "LF.acrf"
-        self.suppdocs = {}
+        self.suppdocs = []
         self.define_objects = {}
 
     def create(self):

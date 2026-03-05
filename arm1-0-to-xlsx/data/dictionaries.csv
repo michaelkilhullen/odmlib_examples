@@ -1,3 +1,2 @@
 OID,Name,Data Type,Dictionary,Version,Href
-CL.AEDICT,Adverse Event Dictionary,text,MedDRA,8.0,http://www.meddra.org/
-CL.AEDICTN,Adverse Event Dictionary (N),integer,MedDRA,8.0,http://www.meddra.org/
+CL.AEDICT,ADVERSE EVENT DICTIONARY,text,MedDRA,8.0,
